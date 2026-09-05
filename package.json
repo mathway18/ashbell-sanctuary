@@ -1,0 +1,14 @@
+{
+  "name": "ashbell-sanctuary",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs",
+    "prepare:pages": "node prepare-pages.cjs"
+  },
+  "dependencies": {
+    "esbuild": "0.25.9",
+    "three": "0.180.0",
+    "three-bvh-csg": "0.0.17"
+  }
+}

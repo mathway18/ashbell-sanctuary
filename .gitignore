@@ -1,0 +1,16 @@
+node_modules/
+versions/
+qa/
+scene.bundle.js
+qa-results.json
+qa.cjs
+audit.cjs
+verify-v2.cjs
+review-v2.cjs
+upgrade_v2.py
+deploy-local.py
+deployment-local.json
+*.png
+!overview.png
+!docs/overview.png
+__pycache__/
