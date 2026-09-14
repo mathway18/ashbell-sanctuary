@@ -346,56 +346,15 @@
     .chart-score { color: var(--text); font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; text-align: right; }
     .chart-footer { display: flex; justify-content: space-between; margin-top: 23px; color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
 
-    .signal-panel { padding-bottom: 21px; }
-    .signal-list { display: grid; gap: 0; padding: 10px 23px 0; }
-    .signal-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 11px; padding: 14px 0; border-bottom: 1px solid rgba(161, 174, 205, .09); }
+    .signal-panel { padding-bottom: 0; }
+    .signal-list { display: grid; gap: 0; padding: 7px 23px 18px; }
+    .signal-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 11px; padding: 15px 0; border-bottom: 1px solid rgba(161, 174, 205, .09); }
     .signal-row:last-child { border-bottom: 0; }
     .rank { color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; }
     .signal-model { min-width: 0; overflow: hidden; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
     .signal-mode { margin-top: 3px; color: var(--muted-2); font-size: 11px; }
     .signal-score { color: var(--cyan); font-family: "SFMono-Regular", Consolas, monospace; font-size: 18px; }
     .signal-score small { color: var(--muted-2); font-size: 10px; }
-    .signal-foot { margin: 8px 23px 0; padding-top: 14px; border-top: 1px solid rgba(161, 174, 205, .09); color: var(--muted); font-size: 12px; line-height: 1.6; }
-
-    .records-panel { overflow: hidden; }
-    .records-head { align-items: end; padding-bottom: 19px; }
-    .records-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; }
-    .search-box, .sort-select {
-      height: 36px;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      outline: none;
-      color: var(--text);
-      background: #ffffff;
-      font-size: 13px;
-    }
-    .search-box { width: min(210px, 42vw); padding: 0 11px; }
-    .search-box::placeholder { color: var(--muted-2); }
-    .search-box:focus, .sort-select:focus { border-color: #7da6c4; box-shadow: 0 0 0 3px rgba(29, 95, 152, .10); }
-    .sort-select { padding: 0 9px; }
-    .sort-select option { color: var(--text); background: var(--panel-strong); }
-    .table-wrap { overflow-x: auto; border-top: 1px solid rgba(161, 174, 205, .1); }
-    table { width: 100%; border-collapse: collapse; min-width: 720px; }
-    th, td { padding: 14px 23px; text-align: left; }
-    th { color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
-    td { border-top: 1px solid rgba(161, 174, 205, .08); color: var(--muted); font-size: 13px; }
-    tbody tr { transition: background .15s ease; }
-    tbody tr:hover { background: #f4f8fb; }
-    .model-cell { color: var(--text); font-weight: 530; }
-    .model-sub { margin-top: 3px; color: var(--muted-2); font-size: 11px; font-weight: 400; }
-    .score-cell { color: var(--text); font-family: "SFMono-Regular", Consolas, monospace; font-size: 17px; }
-    .score-cell.is-top { color: var(--lime); }
-    .score-bar { width: 100px; height: 5px; overflow: hidden; border-radius: 999px; background: #e2e9ef; }
-    .score-bar span { display: block; height: 100%; border-radius: inherit; background: #2b6e9f; }
-    .mode-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid #b9d0e3; border-radius: 999px; color: var(--cyan-2); background: #edf5fb; font-size: 11px; white-space: nowrap; }
-    .mode-pill.no-tools { border-color: #c4cbe0; color: #525f91; background: #f1f3f9; }
-    .mode-pill.non-thinking { border-color: #dfc59e; color: #8b5c20; background: #fbf6eb; }
-    .mode-pill.direct-answer { border-color: #b7d2c2; color: #2f7351; background: #eef7f1; }
-    .empty-state { padding: 48px 23px; color: var(--muted); text-align: center; }
-    .records-foot { display: flex; justify-content: space-between; gap: 15px; padding: 15px 23px 18px; color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
-
-    .footer-note { display: flex; justify-content: space-between; gap: 24px; margin-top: 18px; color: var(--muted-2); font-size: 12px; }
-    .footer-note span:last-child { color: var(--muted); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
 
     @media (max-width: 1050px) {
       .app-shell { grid-template-columns: 214px minmax(0, 1fr); }
@@ -425,11 +384,6 @@
       .panel-head { padding: 18px 16px 0; }
       .category-chart, .signal-list { padding-left: 16px; padding-right: 16px; }
       .chart-row { grid-template-columns: 102px minmax(0, 1fr) 42px; gap: 9px; }
-      .records-head { display: block; padding-bottom: 16px; }
-      .records-controls { justify-content: flex-start; margin-top: 14px; }
-      th, td { padding-right: 16px; padding-left: 16px; }
-      .records-foot { padding-right: 16px; padding-left: 16px; }
-      .footer-note { display: block; line-height: 1.8; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
@@ -461,6 +415,8 @@
     }
     .model-button:hover .model-cell,
     .model-button:focus-visible .model-cell { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+    .model-button.signal-model:hover,
+    .model-button.signal-model:focus-visible { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
     .model-button:focus-visible { outline: 2px solid #7da6c4; outline-offset: 3px; border-radius: 3px; }
 
     .detail-panel { margin-top: 16px; overflow: hidden; }
@@ -610,34 +566,7 @@
               </div>
             </div>
             <div class="signal-list" id="topList"></div>
-            <div class="signal-foot" id="signalFoot">—</div>
           </article>
-        </section>
-
-        <section class="panel records-panel" id="records">
-          <div class="panel-head records-head">
-            <div>
-              <div class="panel-kicker">record index / searchable</div>
-              <h2 class="panel-title">模型成绩索引</h2>
-            </div>
-            <div class="records-controls">
-              <input class="search-box" id="searchInput" type="search" placeholder="搜索模型…" aria-label="搜索模型">
-              <select class="sort-select" id="sortSelect" aria-label="排序方式">
-                <option value="score">分数从高到低</option>
-                <option value="score-asc">分数从低到高</option>
-                <option value="name">模型名称</option>
-              </select>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>模型</th><th>模式</th><th>分数</th><th>相对满分</th><th>备注</th></tr>
-              </thead>
-              <tbody id="recordTable"></tbody>
-            </table>
-          </div>
-          <div class="records-foot"><span id="resultMeta">—</span><span>点击模型名称查看逐题记录</span></div>
         </section>
 
         <section class="panel detail-panel" id="modelDetail" hidden>
@@ -655,11 +584,6 @@
           <div class="question-grid" id="questionGrid"></div>
           <div class="detail-source" id="detailSource"></div>
         </section>
-
-        <div class="footer-note">
-          <span>记录按照本地统计文件整理；分数是对 100 道题的正确题数。</span>
-          <span>LAST SYNC · 2026-09-11</span>
-        </div>
       </div>
     </main>
   </div>
@@ -738,7 +662,7 @@
       'direct-answer': { label: '直出答案' }
     };
 
-    const state = { category: 'all', query: '', sort: 'score', ranking: 'overall' };
+    const state = { category: 'all', ranking: 'overall' };
     const categoryKeys = ['tools', 'no-tools', 'non-thinking', 'direct-answer'];
 
     const average = list => list.length ? list.reduce((sum, item) => sum + item.score, 0) / list.length : 0;
@@ -785,41 +709,13 @@
 
     function renderTopList() {
       const ranked = rankingRecords();
-      const top = ranked.slice(0, 5);
-      document.getElementById('topList').innerHTML = top.map((item, index) => `
+      document.getElementById('topList').innerHTML = ranked.map((item, index) => `
         <div class="signal-row">
-          <div class="rank">0${index + 1}</div>
+          <div class="rank">${String(index + 1).padStart(2, '0')}</div>
           <div><button class="model-button signal-model" type="button" data-record-index="${records.indexOf(item)}" title="查看 ${item.model} 的逐题记录">${item.model}</button><div class="signal-mode">${modeLabel(item.category)}</div></div>
           <div class="signal-score">${item.score}<small>/100</small></div>
         </div>
       `).join('');
-      const rankingLabel = state.ranking === 'overall' ? '综合榜' : modeLabel(state.ranking);
-      document.getElementById('signalFoot').textContent = `${rankingLabel}共 ${ranked.length} 条记录；点击榜单中的模型名可展开逐题结果。`;
-    }
-
-    function filteredRecords() {
-      const normalized = state.query.trim().toLowerCase();
-      let list = records.filter(item => state.category === 'all' || item.category === state.category);
-      if (normalized) list = list.filter(item => `${item.model} ${item.note} ${modeLabel(item.category)}`.toLowerCase().includes(normalized));
-      if (state.sort === 'score-asc') list.sort((a, b) => a.score - b.score || a.model.localeCompare(b.model));
-      else if (state.sort === 'name') list.sort((a, b) => a.model.localeCompare(b.model));
-      else list.sort((a, b) => b.score - a.score || a.model.localeCompare(b.model));
-      return list;
-    }
-
-    function renderRecords() {
-      const list = filteredRecords();
-      const table = document.getElementById('recordTable');
-      table.innerHTML = list.length ? list.map(item => `
-        <tr>
-          <td><button class="model-button" type="button" data-record-index="${records.indexOf(item)}"><div class="model-cell">${item.model}</div><div class="model-sub">${item.category === 'tools' ? 'Python / tool-enabled' : item.category === 'no-tools' ? 'question-only' : item.category === 'non-thinking' ? 'reasoning disabled' : 'final answer only'}${detailByModel[item.model] ? ' · 有逐题记录' : ' · 暂无逐题表'}</div></button></td>
-          <td><span class="mode-pill ${categoryClass(item.category)}"><span>◈</span>${modeLabel(item.category)}</span></td>
-          <td><span class="score-cell ${item.score >= 98 ? 'is-top' : ''}">${item.score}</span></td>
-          <td><div class="score-bar" aria-label="${item.score}%"><span style="width:${item.score}%"></span></div></td>
-          <td>${item.note}</td>
-        </tr>
-      `).join('') : '<tr><td colspan="5"><div class="empty-state">没有匹配的记录，换个关键词试试。</div></td></tr>';
-      document.getElementById('resultMeta').textContent = `${modeLabel(state.category)} · 显示 ${list.length} / ${state.category === 'all' ? records.length : categoryRecords(state.category).length} 条`;
     }
 
     function openModelDetail(item) {
@@ -857,18 +753,13 @@
     function bindEvents() {
       document.querySelectorAll('.nav-item').forEach(button => button.addEventListener('click', () => {
         state.category = button.dataset.category;
+        state.ranking = state.category === 'all' ? 'overall' : state.category;
         document.querySelectorAll('.nav-item').forEach(item => item.classList.toggle('is-active', item === button));
-        renderRecords();
-        document.getElementById('records').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('rankingSelect').value = state.ranking;
+        renderTopList();
+        document.getElementById('topList').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }));
-      document.getElementById('searchInput').addEventListener('input', event => { state.query = event.target.value; renderRecords(); });
-      document.getElementById('sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderRecords(); });
       document.getElementById('rankingSelect').addEventListener('change', event => { state.ranking = event.target.value; renderTopList(); });
-      document.getElementById('recordTable').addEventListener('click', event => {
-        const button = event.target.closest('.model-button[data-record-index]');
-        if (!button) return;
-        openModelDetail(records[Number(button.dataset.recordIndex)]);
-      });
       document.getElementById('topList').addEventListener('click', event => {
         const button = event.target.closest('.model-button[data-record-index]');
         if (!button) return;
@@ -884,17 +775,16 @@
       if (!context?.registerTool) return;
       const lifecycle = new AbortController();
       const validCategories = ['all', ...categoryKeys];
-      const validSorts = ['score', 'score-asc', 'name'];
+      const validRankings = ['overall', ...categoryKeys];
       const tool = {
         name: 'filter_math_results',
         title: 'Filter math benchmark results',
-        description: 'Switch the visible math benchmark category, optionally search model names, and choose the table sort order.',
+        description: 'Switch the visible math benchmark category and choose the expanded leaderboard view.',
         inputSchema: {
           type: 'object',
           properties: {
             category: { type: 'string', enum: validCategories },
-            query: { type: 'string' },
-            sort: { type: 'string', enum: validSorts }
+            ranking: { type: 'string', enum: validRankings }
           },
           required: ['category'],
           additionalProperties: false
@@ -902,17 +792,14 @@
         annotations: { readOnlyHint: false, untrustedContentHint: false },
         execute(input) {
           if (!input || !validCategories.includes(input.category)) throw new Error('Invalid category');
-          if (input.query !== undefined && typeof input.query !== 'string') throw new Error('Invalid query');
-          if (input.sort !== undefined && !validSorts.includes(input.sort)) throw new Error('Invalid sort');
           state.category = input.category;
-          state.query = input.query ?? '';
-          state.sort = input.sort ?? 'score';
+          state.ranking = input.ranking ?? (state.category === 'all' ? 'overall' : state.category);
+          if (!validRankings.includes(state.ranking)) throw new Error('Invalid ranking');
           document.querySelectorAll('.nav-item').forEach(item => item.classList.toggle('is-active', item.dataset.category === state.category));
-          document.getElementById('searchInput').value = state.query;
-          document.getElementById('sortSelect').value = state.sort;
-          renderRecords();
-          const visible = filteredRecords().length;
-          return { category: state.category, label: modeLabel(state.category), query: state.query, sort: state.sort, visible };
+          document.getElementById('rankingSelect').value = state.ranking;
+          renderTopList();
+          const visible = rankingRecords().length;
+          return { category: state.category, label: modeLabel(state.category), ranking: state.ranking, visible };
         }
       };
       try {
@@ -926,7 +813,6 @@
     updateSummary();
     renderCategoryChart();
     renderTopList();
-    renderRecords();
     bindEvents();
     registerWebMcp();
   </script>
