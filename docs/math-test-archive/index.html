@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070a12">
+  <meta name="theme-color" content="#f4f6f8">
   <meta name="description" content="个人数学测试结果档案：比较工具、无工具、非思考和直出答案模式。">
   <title>数学测试档案 · Math Benchmark Lab</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #070a12;
-      --bg-soft: #0c101b;
-      --panel: rgba(15, 21, 34, .88);
-      --panel-strong: #111827;
-      --line: rgba(161, 174, 205, .16);
-      --line-bright: rgba(161, 174, 205, .28);
-      --text: #edf4ff;
-      --muted: #8e9ab0;
-      --muted-2: #647089;
-      --cyan: #62e6ff;
-      --cyan-2: #a7f3ff;
-      --violet: #ad8bff;
-      --lime: #b8f36a;
-      --orange: #ffb86c;
-      --red: #ff7c9a;
-      --shadow: 0 18px 60px rgba(0, 0, 0, .32);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 10px;
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --bg-soft: #eef2f6;
+      --panel: rgba(255, 255, 255, .96);
+      --panel-strong: #ffffff;
+      --line: rgba(28, 48, 72, .13);
+      --line-bright: rgba(28, 48, 72, .24);
+      --text: #1a2a3d;
+      --muted: #5f6e7e;
+      --muted-2: #8190a0;
+      --cyan: #1d5f98;
+      --cyan-2: #184d7d;
+      --violet: #5b679d;
+      --lime: #2f7b58;
+      --orange: #a66a25;
+      --red: #b24f62;
+      --shadow: 0 12px 34px rgba(35, 54, 76, .08);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
     }
 
     * { box-sizing: border-box; }
@@ -36,10 +36,7 @@
       margin: 0;
       min-width: 320px;
       color: var(--text);
-      background:
-        radial-gradient(circle at 77% 12%, rgba(95, 79, 197, .18), transparent 27rem),
-        radial-gradient(circle at 21% 68%, rgba(21, 174, 213, .08), transparent 25rem),
-        var(--bg);
+      background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 58%, #eef2f6 100%);
       font-family: Inter, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
       font-size: 16px;
       line-height: 1.5;
@@ -51,10 +48,10 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .38;
+      opacity: .18;
       background-image:
-        linear-gradient(rgba(129, 151, 196, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(129, 151, 196, .035) 1px, transparent 1px);
+        linear-gradient(rgba(58, 91, 122, .055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 91, 122, .055) 1px, transparent 1px);
       background-size: 48px 48px;
       mask-image: linear-gradient(to bottom, black, transparent 82%);
     }
@@ -77,8 +74,8 @@
       min-height: 100vh;
       padding: 26px 18px 20px;
       border-right: 1px solid var(--line);
-      background: rgba(7, 10, 18, .78);
-      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(12px);
     }
 
     .brand {
@@ -93,11 +90,11 @@
       width: 36px;
       height: 36px;
       place-items: center;
-      border: 1px solid rgba(98, 230, 255, .55);
+      border: 1px solid #9bbbd5;
       border-radius: 11px;
       color: var(--cyan);
-      background: linear-gradient(135deg, rgba(98, 230, 255, .15), rgba(173, 139, 255, .16));
-      box-shadow: inset 0 0 20px rgba(98, 230, 255, .08), 0 0 25px rgba(98, 230, 255, .09);
+      background: #edf5fb;
+      box-shadow: inset 0 0 14px rgba(29, 95, 152, .05);
       font-family: Georgia, serif;
       font-size: 22px;
     }
@@ -143,11 +140,11 @@
       text-align: left;
       transition: .2s ease;
     }
-    .nav-item:hover { color: var(--text); background: rgba(255, 255, 255, .035); }
+    .nav-item:hover { color: var(--text); background: #f1f5f8; }
     .nav-item.is-active {
-      border-color: rgba(98, 230, 255, .22);
+      border-color: #b9d0e3;
       color: var(--cyan-2);
-      background: linear-gradient(90deg, rgba(98, 230, 255, .12), rgba(98, 230, 255, .03));
+      background: #edf5fb;
       box-shadow: inset 3px 0 0 var(--cyan);
     }
     .nav-glyph {
@@ -160,7 +157,7 @@
       color: var(--muted-2);
       font-size: 12px;
     }
-    .nav-item.is-active .nav-glyph { border-color: rgba(98, 230, 255, .35); color: var(--cyan); }
+    .nav-item.is-active .nav-glyph { border-color: #9bbbd5; color: var(--cyan); }
     .nav-name { flex: 1; font-size: 14px; }
     .nav-count {
       color: var(--muted-2);
@@ -173,7 +170,7 @@
       padding: 15px;
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
-      background: linear-gradient(155deg, rgba(25, 33, 51, .86), rgba(12, 17, 28, .78));
+      background: linear-gradient(155deg, #f8fbfd, #eef5fa);
     }
     .source-card .tiny-label {
       color: var(--cyan);
@@ -197,7 +194,7 @@
       height: 7px;
       border-radius: 50%;
       background: var(--lime);
-      box-shadow: 0 0 0 4px rgba(184, 243, 106, .08), 0 0 12px rgba(184, 243, 106, .7);
+      box-shadow: 0 0 0 4px rgba(47, 123, 88, .10);
     }
 
     .main {
@@ -219,9 +216,9 @@
       text-transform: uppercase;
     }
     .breadcrumb span { color: var(--muted); }
-    .breadcrumb b { color: var(--cyan); font-weight: 500; }
+    .breadcrumb b { color: var(--cyan); font-weight: 600; }
     .top-status { display: flex; align-items: center; gap: 9px; }
-    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 3px rgba(47, 123, 88, .10); }
 
     .intro {
       display: grid;
@@ -241,9 +238,9 @@
     h1 {
       max-width: 700px;
       margin: 0;
-      font-size: clamp(34px, 5vw, 64px);
+      font-size: clamp(34px, 4.4vw, 56px);
       font-weight: 630;
-      letter-spacing: -.055em;
+      letter-spacing: -.04em;
       line-height: .98;
     }
     .intro p {
@@ -259,7 +256,7 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--muted);
-      background: rgba(255, 255, 255, .025);
+      background: #ffffff;
       font-family: "SFMono-Regular", Consolas, monospace;
       font-size: 11px;
       white-space: nowrap;
@@ -279,7 +276,7 @@
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
-      background: linear-gradient(148deg, rgba(22, 30, 48, .89), rgba(12, 16, 27, .86));
+      background: linear-gradient(148deg, #ffffff, #f8fafc);
       box-shadow: var(--shadow);
     }
     .stat-card::after {
@@ -289,9 +286,9 @@
       bottom: -42px;
       width: 105px;
       height: 105px;
-      border: 1px solid rgba(98, 230, 255, .18);
+      border: 1px solid rgba(29, 95, 152, .14);
       border-radius: 50%;
-      box-shadow: 0 0 0 16px rgba(98, 230, 255, .025), 0 0 0 33px rgba(98, 230, 255, .018);
+      box-shadow: 0 0 0 16px rgba(29, 95, 152, .025), 0 0 0 33px rgba(29, 95, 152, .015);
     }
     .stat-label { color: var(--muted); font-size: 13px; }
     .stat-value {
@@ -341,11 +338,11 @@
     .chart-row { display: grid; grid-template-columns: 130px minmax(0, 1fr) 49px; align-items: center; gap: 13px; margin: 18px 0; }
     .chart-row:first-child { margin-top: 7px; }
     .chart-name { min-width: 0; overflow: hidden; color: var(--muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
-    .chart-track { height: 8px; overflow: hidden; border-radius: 999px; background: rgba(255, 255, 255, .065); }
-    .chart-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--violet)); box-shadow: 0 0 18px rgba(98, 230, 255, .26); transition: width .45s ease; }
-    .chart-fill[data-category="no-tools"] { background: linear-gradient(90deg, #8e80ff, #c2a4ff); }
-    .chart-fill[data-category="non-thinking"] { background: linear-gradient(90deg, #ffb86c, #ff8ba7); }
-    .chart-fill[data-category="direct-answer"] { background: linear-gradient(90deg, #b8f36a, #62e6ff); }
+    .chart-track { height: 8px; overflow: hidden; border-radius: 999px; background: #e6edf3; }
+    .chart-fill { height: 100%; border-radius: inherit; background: #2b6e9f; transition: width .45s ease; }
+    .chart-fill[data-category="no-tools"] { background: #6875a9; }
+    .chart-fill[data-category="non-thinking"] { background: #b07b3a; }
+    .chart-fill[data-category="direct-answer"] { background: #4d8b6c; }
     .chart-score { color: var(--text); font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; text-align: right; }
     .chart-footer { display: flex; justify-content: space-between; margin-top: 23px; color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
 
@@ -369,12 +366,12 @@
       border-radius: 9px;
       outline: none;
       color: var(--text);
-      background: rgba(255, 255, 255, .045);
+      background: #ffffff;
       font-size: 13px;
     }
     .search-box { width: min(210px, 42vw); padding: 0 11px; }
     .search-box::placeholder { color: var(--muted-2); }
-    .search-box:focus, .sort-select:focus { border-color: rgba(98, 230, 255, .55); box-shadow: 0 0 0 3px rgba(98, 230, 255, .08); }
+    .search-box:focus, .sort-select:focus { border-color: #7da6c4; box-shadow: 0 0 0 3px rgba(29, 95, 152, .10); }
     .sort-select { padding: 0 9px; }
     .sort-select option { color: var(--text); background: var(--panel-strong); }
     .table-wrap { overflow-x: auto; border-top: 1px solid rgba(161, 174, 205, .1); }
@@ -383,17 +380,17 @@
     th { color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
     td { border-top: 1px solid rgba(161, 174, 205, .08); color: var(--muted); font-size: 13px; }
     tbody tr { transition: background .15s ease; }
-    tbody tr:hover { background: rgba(98, 230, 255, .035); }
+    tbody tr:hover { background: #f4f8fb; }
     .model-cell { color: var(--text); font-weight: 530; }
     .model-sub { margin-top: 3px; color: var(--muted-2); font-size: 11px; font-weight: 400; }
     .score-cell { color: var(--text); font-family: "SFMono-Regular", Consolas, monospace; font-size: 17px; }
     .score-cell.is-top { color: var(--lime); }
-    .score-bar { width: 100px; height: 5px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.07); }
-    .score-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--violet)); }
-    .mode-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid rgba(98, 230, 255, .18); border-radius: 999px; color: var(--cyan-2); background: rgba(98, 230, 255, .06); font-size: 11px; white-space: nowrap; }
-    .mode-pill.no-tools { border-color: rgba(173, 139, 255, .2); color: #cfbdff; background: rgba(173, 139, 255, .07); }
-    .mode-pill.non-thinking { border-color: rgba(255, 184, 108, .2); color: #ffd2a0; background: rgba(255, 184, 108, .07); }
-    .mode-pill.direct-answer { border-color: rgba(184, 243, 106, .2); color: #dcffac; background: rgba(184, 243, 106, .07); }
+    .score-bar { width: 100px; height: 5px; overflow: hidden; border-radius: 999px; background: #e2e9ef; }
+    .score-bar span { display: block; height: 100%; border-radius: inherit; background: #2b6e9f; }
+    .mode-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid #b9d0e3; border-radius: 999px; color: var(--cyan-2); background: #edf5fb; font-size: 11px; white-space: nowrap; }
+    .mode-pill.no-tools { border-color: #c4cbe0; color: #525f91; background: #f1f3f9; }
+    .mode-pill.non-thinking { border-color: #dfc59e; color: #8b5c20; background: #fbf6eb; }
+    .mode-pill.direct-answer { border-color: #b7d2c2; color: #2f7351; background: #eef7f1; }
     .empty-state { padding: 48px 23px; color: var(--muted); text-align: center; }
     .records-foot { display: flex; justify-content: space-between; gap: 15px; padding: 15px 23px 18px; color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
 
@@ -436,6 +433,69 @@
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    .ranking-controls { display: flex; align-items: center; gap: 8px; }
+    .ranking-controls label { color: var(--muted-2); font-size: 11px; white-space: nowrap; }
+    .ranking-select {
+      height: 32px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      outline: none;
+      color: var(--text);
+      background: #fff;
+      font-size: 12px;
+    }
+    .ranking-select:focus { border-color: #7da6c4; box-shadow: 0 0 0 3px rgba(29, 95, 152, .10); }
+
+    .model-button {
+      display: inline-block;
+      max-width: 100%;
+      padding: 0;
+      border: 0;
+      color: inherit;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+    }
+    .model-button:hover .model-cell,
+    .model-button:focus-visible .model-cell { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+    .model-button:focus-visible { outline: 2px solid #7da6c4; outline-offset: 3px; border-radius: 3px; }
+
+    .detail-panel { margin-top: 16px; overflow: hidden; }
+    .detail-head { align-items: center; padding-bottom: 17px; }
+    .detail-actions { display: flex; align-items: center; gap: 12px; }
+    .detail-close {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      background: #fff;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .detail-close:hover { color: var(--text); background: #f4f8fb; }
+    .detail-overview { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 23px 18px; }
+    .detail-chip { padding: 6px 9px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); background: #f8fafc; font-size: 12px; }
+    .detail-chip b { color: var(--text); font-weight: 650; }
+    .question-grid { display: grid; grid-template-columns: repeat(10, minmax(38px, 1fr)); gap: 7px; padding: 20px 23px 24px; border-top: 1px solid var(--line); }
+    .question-cell { min-height: 57px; padding: 7px 5px 6px; border: 1px solid #dce5ec; border-radius: 8px; color: var(--muted-2); background: #f8fafc; text-align: center; }
+    .question-cell span { display: block; font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
+    .question-cell b { display: block; margin-top: 4px; color: #9aa7b4; font-size: 19px; font-weight: 600; line-height: 1; }
+    .question-cell.is-correct { border-color: #bad7c5; background: #f1f8f3; }
+    .question-cell.is-correct b { color: #2f7b58; }
+    .question-cell.is-wrong { border-color: #e3c5c9; background: #fdf5f6; }
+    .question-cell.is-wrong b { color: #b24f62; }
+    .detail-empty { padding: 30px 23px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .detail-source { padding: 0 23px 19px; color: var(--muted-2); font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
+    .detail-panel[hidden] { display: none; }
+
+    @media (max-width: 720px) {
+      .ranking-controls { justify-content: flex-start; margin-top: 12px; }
+      .question-grid { grid-template-columns: repeat(5, minmax(42px, 1fr)); padding-right: 16px; padding-left: 16px; }
+      .detail-overview, .detail-source { padding-right: 16px; padding-left: 16px; }
+      .detail-head { display: flex; }
     }
   </style>
 </head>
@@ -524,8 +584,8 @@
           <article class="panel">
             <div class="panel-head">
               <div>
-                <div class="panel-kicker">signal / average score</div>
-                <h2 class="panel-title">四种模式的分数带宽</h2>
+                <div class="panel-kicker">analysis / category score</div>
+                <h2 class="panel-title">成绩分析</h2>
               </div>
               <div class="panel-note">MAX 100</div>
             </div>
@@ -535,10 +595,19 @@
           <article class="panel signal-panel">
             <div class="panel-head">
               <div>
-                <div class="panel-kicker">top signal / score</div>
-                <h2 class="panel-title">当前最高信号</h2>
+                <div class="panel-kicker">ranking / selectable view</div>
+                <h2 class="panel-title">模型排行榜</h2>
               </div>
-              <div class="panel-note">TOP 04</div>
+              <div class="ranking-controls">
+                <label for="rankingSelect">榜单</label>
+                <select class="ranking-select" id="rankingSelect" aria-label="选择排行榜">
+                  <option value="overall">综合榜</option>
+                  <option value="tools">使用工具</option>
+                  <option value="no-tools">不使用工具</option>
+                  <option value="non-thinking">非思考</option>
+                  <option value="direct-answer">直出答案</option>
+                </select>
+              </div>
             </div>
             <div class="signal-list" id="topList"></div>
             <div class="signal-foot" id="signalFoot">—</div>
@@ -568,7 +637,23 @@
               <tbody id="recordTable"></tbody>
             </table>
           </div>
-          <div class="records-foot"><span id="resultMeta">—</span><span>点击左侧分类切换视图</span></div>
+          <div class="records-foot"><span id="resultMeta">—</span><span>点击模型名称查看逐题记录</span></div>
+        </section>
+
+        <section class="panel detail-panel" id="modelDetail" hidden>
+          <div class="panel-head detail-head">
+            <div>
+              <div class="panel-kicker">question detail / 100 items</div>
+              <h2 class="panel-title" id="detailTitle">模型逐题记录</h2>
+            </div>
+            <div class="detail-actions">
+              <div class="panel-note">CORRECT / WRONG / UNRECORDED</div>
+              <button class="detail-close" id="closeDetail" type="button">收起</button>
+            </div>
+          </div>
+          <div class="detail-overview" id="detailOverview"></div>
+          <div class="question-grid" id="questionGrid"></div>
+          <div class="detail-source" id="detailSource"></div>
         </section>
 
         <div class="footer-note">
@@ -627,6 +712,24 @@
       { model: 'Deepseek-V4-pro-instant', score: 2, category: 'direct-answer', note: '不思考 · 只输出答案' }
     ];
 
+    const questionDetails = [
+      { id: 'gpt6-astra-high', model: 'GPT-6-Astra-high', source: '数学测试分数4.md · GPT-6-Astra', correct: 100, filled: 100, cells: '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111' },
+      { id: 'gpt56-sol-high', model: 'GPT-5.6-Sol-high', source: '数学测试分数4.md · GPT-5.6-sol-high', correct: 93, filled: 100, cells: '1110111111111111111111111111111111111110111111111111111011111110110101111111111111111111011111111111' },
+      { id: 'gpt56-sol-xhigh-python', model: 'GPT-5.6-Sol-xhigh + Python', source: '数学测试分数4.md · GPT-5.6-sol-xhigh', correct: 98, filled: 99, cells: '1111111111111111111111111111111111111111111111111111111011111111111111111111111111111111-11111111111' },
+      { id: 'gpt55-xhigh-python', model: 'GPT-5.5-xhigh + Python', source: '数学测试分数4.md · GPT-5.5（xhigh）+Python', correct: 95, filled: 100, cells: '1111111111111111111111011111111111111111111111111111111011111111111111111111111111111111011101111110' },
+      { id: 'gpt55-high-python', model: 'GPT-5.5-high + Python', source: '数学测试分数4.md · GPT-5.5+ Python', correct: 89, filled: 100, cells: '1111111111011111111111010110111111111111011111101111111011111111111111111111111111111110011101111110' },
+      { id: 'gpt55-high', model: 'GPT-5.5-high', source: '数学测试分数4.md · GPT-5.5', correct: 82, filled: 100, cells: '1110110101111111111111011011110011111101111011011011111010111111111101111111111101111111011101111110' },
+      { id: 'qwen38-0722', model: 'Qwen-3.8-max-preview-0722', source: '数学测试分数4.md · qwen-3.8-max-preview-0722', correct: 92, filled: 100, cells: '1110111111111111111111011111111111111110111111111111111010111111111111111111111111111111011111101110' },
+      { id: 'qwen38-0720', model: 'Qwen-3.8-max-preview-0720', source: '数学测试分数4.md · qwen-3.8-max-preview', correct: 88, filled: 100, cells: '1110111101111111111111011011111011111110111111111111111010111111110111111111111111111111011111101110' },
+      { id: 'gemini31-pro', model: 'Gemini-3.1-pro-preview', source: '数学测试分数3.md · Gemini-3.1-pro-preview', correct: 67, filled: 69, cells: '111-1101-1111111111111-1--1-111-111-1-1-111011---1--111---11111--1-1-1111-11-111-11-11-1-1111-11-11-' },
+      { id: 'o4-mini-python', model: 'o4-mini + Python', source: '测试详细分数.md · o4-mini', correct: 2, filled: 90, cells: '000000000-010000000-000000000-000000000-000000000-000000000-000000010-000000000-000000000-000000000-' },
+      { id: 'glm46', model: 'GLM-4.6', source: '测试详细分数.md · glm-4.6', correct: 4, filled: 90, cells: '100000000-011000000-000000000-000000000-000000000-000100000-000000000-000000000-000000000-000000000-' },
+      { id: 'deepseek-r1', model: 'DeepSeek-R1-0528', source: '测试详细分数.md · Deepseek-R1-0528', correct: 3, filled: 90, cells: '000010000-000000000-000000000-000100000-000000000-000000000-000000000-010000000-000000000-000000000-' },
+      { id: 'qwen32507', model: 'Qwen-3-2507-thinking', source: '测试详细分数.md · Qwen3-2507-think', correct: 2, filled: 90, cells: '000010000-000000000-000000000-000000000-000000000-000000000-000000000-000000000-000000000-000001000-' }
+    ];
+
+    const detailByModel = Object.fromEntries(questionDetails.map(item => [item.model, item]));
+
     const categoryMeta = {
       all: { label: '全部记录' },
       tools: { label: '使用工具' },
@@ -635,7 +738,7 @@
       'direct-answer': { label: '直出答案' }
     };
 
-    const state = { category: 'all', query: '', sort: 'score' };
+    const state = { category: 'all', query: '', sort: 'score', ranking: 'overall' };
     const categoryKeys = ['tools', 'no-tools', 'non-thinking', 'direct-answer'];
 
     const average = list => list.length ? list.reduce((sum, item) => sum + item.score, 0) / list.length : 0;
@@ -675,17 +778,23 @@
       `;
     }
 
+    function rankingRecords() {
+      const source = state.ranking === 'overall' ? records : categoryRecords(state.ranking);
+      return [...source].sort((a, b) => b.score - a.score || a.model.localeCompare(b.model));
+    }
+
     function renderTopList() {
-      const top = [...records].sort((a, b) => b.score - a.score || a.model.localeCompare(b.model)).slice(0, 4);
+      const ranked = rankingRecords();
+      const top = ranked.slice(0, 5);
       document.getElementById('topList').innerHTML = top.map((item, index) => `
         <div class="signal-row">
           <div class="rank">0${index + 1}</div>
-          <div><div class="signal-model" title="${item.model}">${item.model}</div><div class="signal-mode">${modeLabel(item.category)}</div></div>
+          <div><button class="model-button signal-model" type="button" data-record-index="${records.indexOf(item)}" title="查看 ${item.model} 的逐题记录">${item.model}</button><div class="signal-mode">${modeLabel(item.category)}</div></div>
           <div class="signal-score">${item.score}<small>/100</small></div>
         </div>
       `).join('');
-      const topModes = [...new Set(top.map(item => modeLabel(item.category)))].join(' + ');
-      document.getElementById('signalFoot').textContent = `最高分覆盖 ${topModes}；工具与无工具模式都出现了满分记录。`;
+      const rankingLabel = state.ranking === 'overall' ? '综合榜' : modeLabel(state.ranking);
+      document.getElementById('signalFoot').textContent = `${rankingLabel}共 ${ranked.length} 条记录；点击榜单中的模型名可展开逐题结果。`;
     }
 
     function filteredRecords() {
@@ -703,7 +812,7 @@
       const table = document.getElementById('recordTable');
       table.innerHTML = list.length ? list.map(item => `
         <tr>
-          <td><div class="model-cell">${item.model}</div><div class="model-sub">${item.category === 'tools' ? 'Python / tool-enabled' : item.category === 'no-tools' ? 'question-only' : item.category === 'non-thinking' ? 'reasoning disabled' : 'final answer only'}</div></td>
+          <td><button class="model-button" type="button" data-record-index="${records.indexOf(item)}"><div class="model-cell">${item.model}</div><div class="model-sub">${item.category === 'tools' ? 'Python / tool-enabled' : item.category === 'no-tools' ? 'question-only' : item.category === 'non-thinking' ? 'reasoning disabled' : 'final answer only'}${detailByModel[item.model] ? ' · 有逐题记录' : ' · 暂无逐题表'}</div></button></td>
           <td><span class="mode-pill ${categoryClass(item.category)}"><span>◈</span>${modeLabel(item.category)}</span></td>
           <td><span class="score-cell ${item.score >= 98 ? 'is-top' : ''}">${item.score}</span></td>
           <td><div class="score-bar" aria-label="${item.score}%"><span style="width:${item.score}%"></span></div></td>
@@ -711,6 +820,38 @@
         </tr>
       `).join('') : '<tr><td colspan="5"><div class="empty-state">没有匹配的记录，换个关键词试试。</div></td></tr>';
       document.getElementById('resultMeta').textContent = `${modeLabel(state.category)} · 显示 ${list.length} / ${state.category === 'all' ? records.length : categoryRecords(state.category).length} 条`;
+    }
+
+    function openModelDetail(item) {
+      const panel = document.getElementById('modelDetail');
+      const detail = detailByModel[item.model];
+      document.getElementById('detailTitle').textContent = item.model;
+
+      if (!detail) {
+        document.getElementById('detailOverview').innerHTML = `
+          <div class="detail-chip">主榜分数 <b>${item.score} / 100</b></div>
+          <div class="detail-chip">逐题记录 <b>暂无收录</b></div>
+        `;
+        document.getElementById('questionGrid').innerHTML = '<div class="detail-empty" style="grid-column:1/-1">当前资料已经收录这个模型的总分，但还没有保存它的 100 题逐题对错表。这里不会用推测数据补齐。</div>';
+        document.getElementById('detailSource').textContent = '状态：仅有总分记录 · 等待逐题明细';
+      } else {
+        const cells = detail.cells.split('');
+        document.getElementById('detailOverview').innerHTML = `
+          <div class="detail-chip">主榜分数 <b>${item.score} / 100</b></div>
+          <div class="detail-chip">逐题正确 <b>${detail.correct} / 100</b></div>
+          <div class="detail-chip">已标注 <b>${detail.filled} / 100 题</b></div>
+        `;
+        document.getElementById('questionGrid').innerHTML = cells.map((status, index) => {
+          const className = status === '1' ? 'is-correct' : status === '0' ? 'is-wrong' : '';
+          const mark = status === '1' ? '✓' : status === '0' ? '×' : '—';
+          const label = status === '1' ? '正确' : status === '0' ? '错误' : '未记录';
+          return `<div class="question-cell ${className}" title="第 ${index + 1} 题：${label}"><span>Q${index + 1}</span><b>${mark}</b></div>`;
+        }).join('');
+        document.getElementById('detailSource').textContent = `来源：${detail.source} · “—”表示原始资料没有标注该题。`;
+      }
+
+      panel.hidden = false;
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function bindEvents() {
@@ -722,6 +863,20 @@
       }));
       document.getElementById('searchInput').addEventListener('input', event => { state.query = event.target.value; renderRecords(); });
       document.getElementById('sortSelect').addEventListener('change', event => { state.sort = event.target.value; renderRecords(); });
+      document.getElementById('rankingSelect').addEventListener('change', event => { state.ranking = event.target.value; renderTopList(); });
+      document.getElementById('recordTable').addEventListener('click', event => {
+        const button = event.target.closest('.model-button[data-record-index]');
+        if (!button) return;
+        openModelDetail(records[Number(button.dataset.recordIndex)]);
+      });
+      document.getElementById('topList').addEventListener('click', event => {
+        const button = event.target.closest('.model-button[data-record-index]');
+        if (!button) return;
+        openModelDetail(records[Number(button.dataset.recordIndex)]);
+      });
+      document.getElementById('closeDetail').addEventListener('click', () => {
+        document.getElementById('modelDetail').hidden = true;
+      });
     }
 
     function registerWebMcp() {
